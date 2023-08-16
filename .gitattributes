@@ -1,0 +1,2 @@
+pickles/*.pkl filter=lfs diff=lfs merge=lfs -text
+pickles/vectors/*.pkl filter=lfs diff=lfs merge=lfs -text
