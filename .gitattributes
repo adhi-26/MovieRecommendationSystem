@@ -1,2 +1,4 @@
 pickles/vectors/plot_vectors.pkl filter=lfs diff=lfs merge=lfs -text
 pickles/vectors/genre_vectors.pkl filter=lfs diff=lfs merge=lfs -text
+pickles/google_model.pkl filter=lfs diff=lfs merge=lfs -text
+pickles/features_series.pkl filter=lfs diff=lfs merge=lfs -text

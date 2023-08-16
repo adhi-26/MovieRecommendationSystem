@@ -9,12 +9,9 @@ import os
 st.set_page_config('Movie Recommendation System', layout='centered', page_icon=":film:")
 
 @st.cache_data(show_spinner=False)
-def load_data(path = 'pickles/vectors'):
-    params = [np.array(pkl.load_pickle(f'{path}/{item}').todense()) for item in os.listdir(path) if 'vectors.pkl' in item]
-    metadata = pd.read_csv('MovieData/movie_database.csv', index_col='imdb-id')
-    combined_vector = np.concatenate(params, axis = 1)
-    combined_series = pd.Series(combined_vector.tolist(), index=metadata.index.values)
-    return combined_series, metadata
+def load_data(path = 'pickles/features_series.pkl'):
+    combined_series = pkl.load_pickle(path)
+    return combined_series
 
 def similarity_matrix(movie_ids: list, series: pd.Series):
     sim_scores = pd.Series(cosine_similarity(series.to_list(), series[movie_ids].to_list()).sum(axis = 1), index=series.index).sort_values(ascending=False)
@@ -45,7 +42,9 @@ def get_recommendations(movie_ids: list, ntitles: int, languages: list):
 
     return get_top_ntitles(ntitles, sim_scores, df)
 
-features_series, metadata = load_data()
+
+features_series = load_data()
+metadata = pd.read_csv('MovieData/movie_database.csv', index_col='imdb-id')
 
 language_codes = {  
                     'English' : 'en',
@@ -86,4 +85,4 @@ languages = st.multiselect(
 if st.button('Get Recommendations'):
     with st.spinner('Finding similar movies...Hold on'):
         recommended_movies = get_recommendations(movie_ids, 10, languages)
-    RecommendationsPage.RenderPage(recommended_movies, metadata)
+    RecommendationsPage.RenderPage(recommended_movies, metadata, language_names)
