@@ -31,7 +31,6 @@ def get_top_ntitles(num_titles, sim_scores, df):
             break
     return top_titles
 
-@st.cache_data(show_spinner=False)
 def get_recommendations(movie_ids: list, ntitles: int, languages: list):
     sim_scores = similarity_matrix(movie_ids, features_series)
     df = filter_df(metadata, languages)
