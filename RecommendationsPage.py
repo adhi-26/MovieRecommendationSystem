@@ -7,7 +7,7 @@ def RenderPage(movie_ids: list, movies: pd.DataFrame, language: dict):
         movie = movies.loc[id]
         col1, col2 = st.columns([1,3])
         with col1:
-            st.image(movie['poster'], width=150)
+            st.image(movie['poster'], width=120)
         with col2:
             st.markdown(f"**{movie['title']}** (**{int(movie['release-year'])}**) | **{language[movie['language']]}**")
             st.markdown(f"**{movie['genre']}**")
