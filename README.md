@@ -23,8 +23,17 @@ Paste the path for the model in the required variable
 
 
 # Front-End
+<h3>HomePage</h3>
 
-![HomePage](Images/Screenshot 2023-08-16 at 10.28.58 PM.png)
+![HomePage](Images/HomePage.png)
+
+<h3>Recommendations 1</h3>
+
+![Recommendations1](Images/Rec1.png)
+
+<h3>HomePage</h3>
+
+![Recommendations2](Images/Rec2.png)
 
 
 
