@@ -24,7 +24,8 @@ Paste the path for the model in the required variable
 
 # Front-End
 
-1[]()
+1[](Images/Screenshot 2023-08-16 at 10.28.58 PM.png)
+
 
 
 
