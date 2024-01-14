@@ -31,7 +31,7 @@ Paste the path for the model in the required variable
 
 ![Recommendations1](Images/Rec1.png)
 
-<h3>HomePage</h3>
+<h3>Recommendations 2</h3>
 
 ![Recommendations2](Images/Rec2.png)
 
